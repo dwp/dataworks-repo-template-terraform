@@ -1,0 +1,8 @@
+resources:
+  - name: dataworks-repo-template-terraform-pr
+    type: pull-request
+    source:
+      repository: dwp/dataworks-repo-template-terraform
+      access_token: ((dataworks-secrets.concourse_github_pat))
+    webhook_token: ((dataworks.concourse_github_webhook_token))
+    check_every: 1m
