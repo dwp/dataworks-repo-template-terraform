@@ -30,6 +30,11 @@ git-hooks: ## Set up hooks in .git/hooks
 		done \
 	}
 
+.PHONY: initial-commit
+initial-commit: ## Rename template files
+	chmod +x rename.sh
+	rename.sh
+
 .PHONY: terraform-init
 terraform-init: ## Run `terraform init` from repo root
 	terraform init terraform/deploy/
