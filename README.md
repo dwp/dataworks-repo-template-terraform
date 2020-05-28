@@ -6,5 +6,5 @@ Template Terraform repository for DataWorks GitHub
 Welcome to your new DataWorks GitHub repository.
 
 Please run:  
-`make initial-commit`  
+`make initial-commit`  and then `aviator`
 to being using your repository.
