@@ -7,7 +7,7 @@ git remote set-url origin $ORIGIN
 
 if [ ! -z 'grep -rnw $TF_REPO_NAME ci' ]; then
     git checkout -b initial-commit
-    git submodule add https://github.com/dwp/githooks .githooks
+    git submodule add https://github.com/dwp/dataworks-githooks .githooks
     make git-hooks
     
     find ci -type f -exec sed -i '' "s/$TF_REPO_NAME/$NEW_REPO_NAME/g" {} +
