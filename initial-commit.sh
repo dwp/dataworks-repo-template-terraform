@@ -14,7 +14,7 @@ if [ ! -z 'grep -rnw $TF_REPO_NAME ci' ]; then
     find terraform -type f -exec sed -i '' "s/$TF_REPO_NAME/$NEW_REPO_NAME/g" {} +
     find aviator.yml -type f -exec sed -i '' "s/$TF_REPO_NAME/$NEW_REPO_NAME/g" {} +
     
-    rm initial-comit.sh
+    rm initial-commit.sh
     
     git add --all
     git commit -m "Renamed pipeline to fit repository"
