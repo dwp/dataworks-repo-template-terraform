@@ -9,7 +9,7 @@ Welcome to your new DataWorks GitHub repository.
 
 Please run:  
 `make initial-commit`  and then `aviator`
-to being using your repository.  
+to begin using your repository.  
 
 The `initial-commit` will create a PR for you renaming all the templated content to be relevant for your repository. It will also add the `dataworks-githooks` submodule to the `.githooks` folder.  For more info see: [dataworks-githooks](https://github.com/dwp/dataworks-githooks)
 
