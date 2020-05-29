@@ -1,6 +1,8 @@
 # dataworks-repo-template-terraform
 Template Terraform repository for DataWorks GitHub
 
+This repo contains Makefile and base terraform folders and jinja2 files to fit the standard pattern.
+This repo will be used as a base to create new repos, upon which the user runs make initial-commit, renaming the template files and adding the githooks submodule, making the repo ready for use.
 
 ### Initialisation steps
 Welcome to your new DataWorks GitHub repository.
