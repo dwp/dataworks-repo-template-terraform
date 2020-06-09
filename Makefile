@@ -8,7 +8,7 @@ help:
 
 .PHONY: bootstrap
 bootstrap: ## Bootstrap local environment for first use
-	make git-hooks
+	@make git-hooks
 	pip3 install --user Jinja2 PyYAML boto3
 	@{ \
 		export AWS_PROFILE=$(aws_profile); \
@@ -19,10 +19,9 @@ bootstrap: ## Bootstrap local environment for first use
 
 .PHONY: git-hooks
 git-hooks: ## Set up hooks in .githooks
-	@{ \
-		git submodule update --init .githooks \
-		git config core.hooksPath .githooks \
-	}
+	@git submodule update --init .githooks ; \
+	git config core.hooksPath .githooks \
+
 
 .PHONY: terraform-init
 terraform-init: ## Run `terraform init` from repo root
