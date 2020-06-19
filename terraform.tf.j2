@@ -42,7 +42,6 @@ locals {
     Costcode     = var.costcode
     Team         = "DataWorks"
   }
-}
 
   cidr_block = {
   {%- for environment, ranges in cidr_block.items() %}
@@ -51,4 +50,4 @@ locals {
           {{ key }} = "{{ value }}"{% endfor %}
       } {%- endfor %}
   }
-
+}
