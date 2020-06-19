@@ -39,5 +39,5 @@ terraform-apply: ## Run `terraform apply` from repo root
 	terraform apply
 
 .PHONY: terraform-workspace-new
-terraform-workspace-new: ## Run `terraform-workspace-new workspace=<workspace_name>` from repo root
+terraform-workspace-new: ## Creates new Terraform workspace with Concourse remote execution. Run `terraform-workspace-new workspace=<workspace_name>`
 	fly -t aws-concourse execute --config create-workspace.yml --input repo=. -v workspace="$(workspace)"

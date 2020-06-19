@@ -7,7 +7,6 @@ image_resource:
     tag: ((dataworks.terraform_version))
 params:
   TF_INPUT: false
-  TF_VAR_costcode: ((dataworks.costcode))
   WORKSPACE: ((workspace))
 inputs:
   - name: repo
