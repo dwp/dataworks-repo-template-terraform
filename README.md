@@ -18,6 +18,5 @@ In addition, you may want to do the following:
 
 1. Configure Concourse CI pipeline:
     1. Add/remove jobs in `./ci/jobs` as required 
-    1. Enable Terraform plan and apply tasks - update `./ci/meta.yml` as instructed in the comments inside `terraform-plan` and `terraform-apply` sections
     1. Create CI pipeline:  
 `aviator`
