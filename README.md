@@ -19,6 +19,7 @@ After cloning this repo please do the following:
 
 1. Configure Concourse CI pipeline:
     1. Update project name in CI files - replace every instance of `dataworks-repo-template-terraform` with your project name under `./ci/`
+    1. Add and/or remove jobs in `./ci/jobs` as required 
     1. Enable Terraform plan and apply tasks - update `./ci/meta.yml` as instructed in the comments inside `terraform-plan` and `terraform-apply` sections
     1. Create CI pipeline:  
 `aviator`
