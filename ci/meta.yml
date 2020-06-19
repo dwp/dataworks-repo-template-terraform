@@ -48,8 +48,8 @@ meta:
             - |
               cp ../terraform-config/terraform.tf .
               terraform workspace show
+              terraform init
               # Remove this line; uncomment the next lines
-              #terraform init
               #terraform plan -out terraform.plan
               #terraform apply -auto-approve terraform.plan
           dir: dataworks-repo-template-terraform
@@ -67,9 +67,9 @@ meta:
             - |
               cp ../terraform-config/terraform.tf .
               terraform workspace show
-              # Remove this line and the next; uncomment the following lines
-              terraform fmt -recursive
-              #terraform init
+              terraform init
+              # Remove this line and the next (validate); uncomment the following lines
+              terraform validate
               #terraform plan $DETAILED_EXITCODE
           dir: dataworks-repo-template-terraform
         inputs:
