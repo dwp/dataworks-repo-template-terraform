@@ -48,9 +48,9 @@ meta:
             - |
               cp ../terraform-bootstrap/terraform.tf .
               terraform workspace show
-              #ENABLE terraform init
-              #ENABLE terraform plan -out terraform.plan
-              #ENABLE terraform apply -auto-approve terraform.plan
+              #ENABLE_BY_INITIAL_COMMIT terraform init
+              #ENABLE_BY_INITIAL_COMMIT terraform plan -out terraform.plan
+              #ENABLE_BY_INITIAL_COMMIT terraform apply -auto-approve terraform.plan
           dir: dataworks-repo-template-terraform
         inputs:
           - name: dataworks-repo-template-terraform
@@ -66,9 +66,9 @@ meta:
             - |
               cp ../terraform-bootstrap/terraform.tf .
               terraform workspace show
-              terraform init -backend=false; terraform validate #REMOVE
-              #ENABLE terraform init
-              #ENABLE terraform plan $DETAILED_EXITCODE
+              terraform init -backend=false; terraform validate #REMOVE_BY_INITIAL_COMMIT
+              #ENABLE_BY_INITIAL_COMMIT terraform init
+              #ENABLE_BY_INITIAL_COMMIT terraform plan $DETAILED_EXITCODE
           dir: dataworks-repo-template-terraform
         inputs:
           - name: dataworks-repo-template-terraform
