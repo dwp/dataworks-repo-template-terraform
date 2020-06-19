@@ -1,5 +1,8 @@
 SHELL:=bash
 
+aws_profile=default
+aws_region=eu-west-2
+
 default: help
 
 .PHONY: help
@@ -25,12 +28,12 @@ git-hooks: ## Set up hooks in .githooks
 
 .PHONY: terraform-init
 terraform-init: ## Run `terraform init` from repo root
-	terraform init terraform/deploy/
+	terraform init
 
 .PHONY: terraform-plan
 terraform-plan: ## Run `terraform plan` from repo root
-	terraform plan -var-file=terraform/deploy/terraform.tfvars terraform/deploy/
+	terraform plan
 
 .PHONY: terraform-apply
 terraform-apply: ## Run `terraform apply` from repo root
-	terraform apply -var-file=terraform/deploy/terraform.tfvars terraform/deploy/
+	terraform apply
