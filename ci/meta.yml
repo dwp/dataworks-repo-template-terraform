@@ -67,8 +67,11 @@ meta:
               cp ../terraform-config/terraform.tf .
               terraform workspace show
               terraform init
-              terraform plan -detailed-exitcode
+              terraform plan $DETAILED_EXITCODE
           dir: dataworks-repo-template-terraform
         inputs:
           - name: dataworks-repo-template-terraform
           - name: terraform-config
+      params:
+        DETAILED_EXITCODE: -detailed-exitcode
+

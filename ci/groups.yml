@@ -1,4 +1,8 @@
 groups:
+  - name: master
+    jobs:
+      - development
+      - qa
   - name: pull-request
     jobs:
-      - dataworks-repo-template-terraform
+      - dataworks-repo-template-terraform-pr
