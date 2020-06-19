@@ -12,6 +12,8 @@ After cloning this repo please do the following:
 
 1. Update project name in `terraform.tf.j2` (see `locals` section)
 
+1. Set `assume_role` variable value in variables.tf
+
 1. Run:  
 `make bootstrap`
 
