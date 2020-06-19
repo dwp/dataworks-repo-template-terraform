@@ -12,10 +12,11 @@ After cloning this repo please do the following:
 
 1. Configure Terraform:
     1. Update project name in `terraform.tf.j2` (see `locals` section)
-    1. Set `assume_role` variable value in variables.tf
+    1. Set `assume_role` variable value in `variables.tf`
     1. Run:  
 `make bootstrap`
-    1. Create non-default Terraform workspaces as and if required.
+    1. Create non-default Terraform workspaces as and if required:  
+    `make terraform-workspace-new workspace=<workspace_name> `
 
 1. Configure Concourse CI pipeline:
     1. Update project name in CI files - replace every instance of `dataworks-repo-template-terraform` with your project name under `./ci/`
