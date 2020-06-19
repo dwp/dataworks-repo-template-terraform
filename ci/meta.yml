@@ -29,12 +29,12 @@ meta:
             - -exc
             - |
               python bootstrap_terraform.py
-              cp terraform.tf ../terraform-config
+              cp terraform.tf ../terraform-bootstrap
           dir: dataworks-repo-template-terraform
         inputs:
           - name: dataworks-repo-template-terraform
         outputs:
-          - name: terraform-config
+          - name: terraform-bootstrap
       params:
         AWS_REGION: eu-west-2
     terraform-apply:
@@ -46,15 +46,16 @@ meta:
           args:
             - -exc
             - |
-              cp ../terraform-config/terraform.tf .
+              cp ../terraform-bootstrap/terraform.tf .
               terraform workspace show
-              terraform init
-              terraform plan -out terraform.plan
-              terraform apply -auto-approve terraform.plan
+              # Remove this line; uncomment the next lines
+              #terraform init
+              #terraform plan -out terraform.plan
+              #terraform apply -auto-approve terraform.plan
           dir: dataworks-repo-template-terraform
         inputs:
           - name: dataworks-repo-template-terraform
-          - name: terraform-config
+          - name: terraform-bootstrap
     terraform-plan:
       task: terraform-plan
       .: (( inject meta.plan.terraform-common-config ))
@@ -64,11 +65,16 @@ meta:
           args:
             - -exc
             - |
-              cp ../terraform-config/terraform.tf .
+              cp ../terraform-bootstrap/terraform.tf .
               terraform workspace show
-              terraform init
-              terraform plan -detailed-exitcode
+              # Remove this line and the next; uncomment the following lines
+              terraform init -backend=false; terraform validate
+              #terraform init
+              #terraform plan $DETAILED_EXITCODE
           dir: dataworks-repo-template-terraform
         inputs:
           - name: dataworks-repo-template-terraform
-          - name: terraform-config
+          - name: terraform-bootstrap
+      params:
+        DETAILED_EXITCODE: -detailed-exitcode
+
