@@ -69,7 +69,7 @@ meta:
               terraform workspace show
               # Remove this line and the next; uncomment the following lines
               terraform init -backend=false; terraform validate
-              # terraform init
+              #terraform init
               #terraform plan $DETAILED_EXITCODE
           dir: dataworks-repo-template-terraform
         inputs:
