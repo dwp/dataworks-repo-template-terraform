@@ -11,8 +11,6 @@ Running aviator will create the pipeline required on the AWS-Concourse instance,
 After cloning this repo please do the following: 
 
 1. Configure Terraform:
-    1. Update project name in `terraform.tf.j2` (see `locals` section)
-    1. Set `assume_role` variable value in `variables.tf`
     1. Generate `terraform.tf` and `terraform.tfvars` files:   
 `make bootstrap`
     1. Create non-default Terraform workspaces as and if required:  

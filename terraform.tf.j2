@@ -21,7 +21,7 @@ provider "aws" {
 }
 
 locals {
-  name        = "dataworks-repo-template"
+  name        = "dataworks-repo-template-terraform"
   environment = terraform.workspace == "default" ? "development" : terraform.workspace
 
   account = {

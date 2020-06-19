@@ -5,7 +5,7 @@ variable "costcode" {
 
 variable "assume_role" {
   type        = string
-  default     = ""
+  default     = "ci"
   description = "IAM role assumed by Concourse when running Terraform"
 }
 
