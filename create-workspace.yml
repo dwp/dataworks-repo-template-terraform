@@ -17,3 +17,5 @@ run:
     - |
       echo "Creating workspace $WORKSPACE"
       terraform workspace new $WORKSPACE
+      terraform workspace init
+
