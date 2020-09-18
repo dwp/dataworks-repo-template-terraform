@@ -9,7 +9,7 @@ spruce:
         regexp: ".*.yml"
     to: aviator_pipeline.yml
 fly:
-  name: repo-template-terraform
+  name: dataworks-repo-template-terraform
   target: aws-concourse
   config: aviator_pipeline.yml
   expose: true
