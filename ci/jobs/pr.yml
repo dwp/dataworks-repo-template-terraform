@@ -8,8 +8,6 @@ jobs:
         params:
           path: dataworks-repo-template-terraform-pr
           status: pending
-        input_mapping:
-          dataworks-repo-template-terraform: dataworks-repo-template-terraform-pr
       - .: (( inject meta.plan.terraform-bootstrap ))
         input_mapping:
           dataworks-repo-template-terraform: dataworks-repo-template-terraform-pr
@@ -17,8 +15,8 @@ jobs:
         input_mapping:
           dataworks-repo-template-terraform: dataworks-repo-template-terraform-pr
         params:
-          TF_WORKSPACE: 'qa'
-          DETAILED_EXITCODE: ''
+          TF_WORKSPACE: "qa"
+          DETAILED_EXITCODE: ""
         on_failure:
           put: dataworks-repo-template-terraform-pr
           params:
