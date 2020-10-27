@@ -19,3 +19,4 @@ run:
       terraform init
       terraform workspace new $WORKSPACE
       terraform apply -auto-approve
+  dir: repo
