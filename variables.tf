@@ -1,8 +1,3 @@
-variable "costcode" {
-  type    = string
-  default = ""
-}
-
 variable "assume_role" {
   type        = string
   default     = "ci"
