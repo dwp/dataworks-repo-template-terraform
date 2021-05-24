@@ -12,38 +12,20 @@ terraform {
 }
 
 provider "aws" {
-  version = "~> 3.12.0"
+  version = "~> 3.42.0"
   region  = "{{terraform.provider_region}}"
 
   assume_role {
     role_arn = "arn:aws:iam::${lookup(local.account, local.environment)}:role/${var.assume_role}"
   }
+
+  default_tags {
+    tags = local.common_repo_tags
+  }
 }
 
-locals {
-  name        = "dataworks-repo-template-terraform"
-  environment = terraform.workspace == "default" ? "development" : terraform.workspace
-
-  account = {
-    {%- for key, value in accounts.items() %}
-      {{key}} = "{{value}}"
-    {%- endfor %}
-  }
-
-  common_tags = {
-    {%- for key, value in common_tags.items() %}
-      {{key}} = "{{value}}"
-    {%- endfor %}
-    Environment  = local.environment
-    Application  = local.name
-    Team         = "DataWorks"
-  }
-
-  cidr_block = {
-  {%- for environment, ranges in cidr_block.items() %}
-      {{ environment }} = {
-        {%- for key, value in ranges.items() %}
-          {{ key }} = "{{ value }}"{% endfor %}
-      } {%- endfor %}
-  }
+module "dataworks_common" {
+  source                = "{{terraform.dataworks_common_module_name}}"
+  version               = "{{terraform.dataworks_common_module_version}}"
+  tag_value_environment = local.environment
 }
