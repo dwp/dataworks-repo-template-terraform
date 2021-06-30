@@ -6,3 +6,6 @@ groups:
   - name: pull-request
     jobs:
       - dataworks-repo-template-terraform-pr
+  - name: update-pipeline
+    jobs:
+      - update-pipeline
