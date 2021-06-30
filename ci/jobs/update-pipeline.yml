@@ -1,15 +1,3 @@
-resources:
-  - name: dataworks-repo-template-terraform-update-pipeline
-    type: git
-    source:
-      branch: master
-      uri: https://github.com/dwp/dataworks-repo-template-terraform.git
-      paths:
-        - ci/*
-        - aviator.yml
-    webhook_token: ((dataworks.concourse_github_webhook_token))
-    check_every: 720h 
-
 jobs:
   - name: update-pipeline
     plan:
